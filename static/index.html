@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Twin - Bring It to Life</title>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/hero.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="https://aeaea.xyz/en" class="logo">
+            <img src="/static/images/aeaea-logo.png" alt="Aeaea Logo">
+        </a>
+        <nav>
+            <a href="#buy-in-now">Get $AIAI</a>
+            <a href="/whitepaper">Whitepaper</a>
+            <a href="/connect">Connect</a>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="particles" id="particles"></div>
+        <div class="tubes-glow"></div>
+        <img src="/static/images/hero-background.jpg" alt="3D Genesis Printer creating an AI Twin" class="hero-background">
+        <div class="hero-content">
+            <h1>Create Your AI Twin Today!</h1>
+            <h2>Your Personal Digital Companion</h2>
+            <a href="#how-it-works" class="cta-button">Start Building Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="reveal-section">
+        <div class="content-wrapper">
+            <h1 class="section-title">Bring It to Life</h1>
+            
+            <!-- Figma UI Link -->
+            <div class="figma-link">
+                <a href="https://www.figma.com/design/B2bYU4ux8tce6dFi6e5miQ/Ææa-|-WEB?node-id=46368-17768&m=dev&t=lxh06ih8UgmeiDg1-1" target="_blank" rel="noopener noreferrer">
+                    View UI Design in Figma
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8.66667V12.6667C12 13.0203 11.8595 13.3594 11.6095 13.6095C11.3594 13.8595 11.0203 14 10.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V5.33333C2 4.97971 2.14048 4.64057 2.39052 4.39052C2.64057 4.14048 2.97971 4 3.33333 4H7.33333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 2H14V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.66666 9.33333L14 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Gene Selection Area -->
+            <div class="gene-selection">
+                <div class="gene-container">
+                    <label for="typeGene">Type Gene</label>
+                    <div class="gene-inputs">
+                        <div class="select-wrapper">
+                            <select id="typeGene" class="gene-type">
+                                <option value="">Select Type</option>
+                                <option value="Humanoid">Humanoid</option>
+                                <option value="Cybernetic">Cybernetic</option>
+                                <option value="Draconic">Draconic</option>
+                                <option value="Celestial">Celestial</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="typeGeneStars" class="gene-stars">
+                                <option value="">Stars</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gene-container">
+                    <label for="bodyGene">Body Gene</label>
+                    <div class="gene-inputs">
+                        <div class="select-wrapper">
+                            <select id="bodyGene" class="gene-type">
+                                <option value="">Select Type</option>
+                                <option value="Human-like">Human-like</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Reptilian">Reptilian</option>
+                                <option value="Ethereal">Ethereal</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="bodyGeneStars" class="gene-stars">
+                                <option value="">Stars</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gene-container">
+                    <label for="powerGene">Power Gene</label>
+                    <div class="gene-inputs">
+                        <div class="select-wrapper">
+                            <select id="powerGene" class="gene-type">
+                                <option value="">Select Type</option>
+                                <option value="Physical">Physical Skill</option>
+                                <option value="Tech">Tech</option>
+                                <option value="Magic">Magic</option>
+                                <option value="Cosmic">Cosmic Energy</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="powerGeneStars" class="gene-stars">
+                                <option value="">Stars</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gene-container">
+                    <label for="flairGene">Flair Gene</label>
+                    <div class="gene-inputs">
+                        <div class="select-wrapper">
+                            <select id="flairGene" class="gene-type">
+                                <option value="">Select Type</option>
+                                <option value="Sword">Sword</option>
+                                <option value="RoboticArm">Robotic Arm</option>
+                                <option value="Wings">Wings</option>
+                                <option value="Aura">Aura</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="flairGeneStars" class="gene-stars">
+                                <option value="">Stars</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gene-container">
+                    <label for="markGene">Mark Gene</label>
+                    <div class="gene-inputs">
+                        <div class="select-wrapper">
+                            <select id="markGene" class="gene-type">
+                                <option value="">Select Type</option>
+                                <option value="Name">Name</option>
+                                <option value="Color">Color</option>
+                                <option value="Marking">Marking</option>
+                            </select>
+                        </div>
+                        <div class="select-wrapper">
+                            <select id="markGeneStars" class="gene-stars">
+                                <option value="">Stars</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3D Printer Area -->
+            <div class="printer-section">
+                <div id="printerCanvas" class="printer-canvas"></div>
+                <button id="revealButton" class="reveal-button" disabled>Bring It to Life</button>
+            </div>
+            
+            <!-- Probability Display -->
+            <div class="probability-section">
+                <h2>Twin Type Chances</h2>
+                <div class="probability-chart">
+                    <canvas id="probabilityChart"></canvas>
+                </div>
+                <div class="probability-text" id="probabilityText"></div>
+            </div>
+            
+            <!-- Result Display -->
+            <div class="result-section" style="display: none;">
+                <div id="twinCanvas" class="twin-canvas"></div>
+                <div class="twin-info">
+                    <h2 id="twinType"></h2>
+                    <p id="twinDescription"></p>
+                    <div class="result-buttons">
+                        <button id="tryAgainButton" class="secondary-button">Try Again</button>
+                        <button id="buyGenesButton" class="primary-button">Buy More Genes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Custom JS -->
+    <script src="/static/js/three-setup.js"></script>
+    <script src="/static/js/probability.js"></script>
+    <script src="/static/js/animation.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/hero.js"></script>
+</body>
+</html> 
