@@ -121,15 +121,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Parallax effect for hero background
-const heroBackground = document.querySelector('.hero-background');
-if (heroBackground) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-    });
-}
-
 // Animate tubes glow
 const tubesGlow = document.querySelector('.tubes-glow');
 if (tubesGlow) {
@@ -139,4 +130,77 @@ if (tubesGlow) {
             tubesGlow.style.opacity = '0.3';
         }, 1500);
     }, 3000);
-} 
+}
+
+// Sound Control
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('heroVideo');
+    const soundControl = document.getElementById('soundControl');
+    const soundIcon = soundControl.querySelector('.sound-icon');
+    const soundLabel = soundControl.querySelector('.sound-label');
+
+    // Function to update sound control state
+    function updateSoundControl(isMuted) {
+        video.muted = isMuted;
+        
+        if (isMuted) {
+            soundIcon.classList.remove('sound-on');
+            soundLabel.textContent = 'Unmute';
+        } else {
+            soundIcon.classList.add('sound-on');
+            soundLabel.textContent = 'Mute';
+        }
+    }
+
+    // Initialize sound control state
+    updateSoundControl(true);
+
+    // Handle click events
+    soundControl.addEventListener('click', function() {
+        // Toggle mute state
+        const newMutedState = !video.muted;
+        
+        if (!newMutedState) {
+            // Try to play with sound
+            try {
+                video.muted = false;
+                video.play().then(() => {
+                    updateSoundControl(false);
+                }).catch((error) => {
+                    console.error('Error playing video:', error);
+                    video.muted = true;
+                    updateSoundControl(true);
+                });
+            } catch (error) {
+                console.error('Error toggling sound:', error);
+                video.muted = true;
+                updateSoundControl(true);
+            }
+        } else {
+            // Mute the video
+            video.muted = true;
+            updateSoundControl(true);
+        }
+    });
+
+    // Ensure video starts muted
+    video.addEventListener('loadedmetadata', function() {
+        video.muted = true;
+        updateSoundControl(true);
+    });
+
+    // Handle video play events
+    video.addEventListener('play', function() {
+        if (!video.muted) {
+            soundIcon.classList.add('sound-on');
+            soundLabel.textContent = 'Mute';
+        }
+    });
+
+    // Handle video pause events
+    video.addEventListener('pause', function() {
+        if (!video.muted) {
+            video.play().catch(error => console.error('Error resuming video:', error));
+        }
+    });
+}); 
