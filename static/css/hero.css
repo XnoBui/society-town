@@ -60,15 +60,16 @@ nav a:hover {
 /* Hero Section */
 #hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
     background: var(--dark-bg);
+    padding-bottom: 5vh;
 }
 
 .hero-background {
@@ -88,14 +89,20 @@ nav a:hover {
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5vh;
 }
 
 #hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
-    color: var(--neon-cyan);
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 90%;
+    color: var(--text-white);
     margin-bottom: 20px;
-    text-shadow: 0 0 10px var(--neon-cyan);
+    text-shadow: none;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
@@ -114,13 +121,16 @@ nav a:hover {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: var(--neon-cyan);
-    color: var(--dark-bg);
+    background: rgba(99, 99, 99, 0.10);
+    color: var(--text-white);
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 180.918px;
+    border: 2.001px solid rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(7.236726760864258px);
+    -webkit-backdrop-filter: blur(7.236726760864258px);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -129,7 +139,8 @@ nav a:hover {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 20px var(--neon-cyan);
+    background: rgba(99, 99, 99, 0.20);
+    border-color: rgba(255, 255, 255, 0.30);
 }
 
 /* Particle Effect */
@@ -259,11 +270,15 @@ nav a:hover {
     }
 
     #hero {
-        height: 60vh;
+        height: 100vh;
+        padding-bottom: 3vh;
     }
 
     #hero h1 {
         font-size: 32px;
+        font-family: "Helvetica Neue";
+        font-weight: 500;
+        line-height: 90%;
     }
 
     #hero h2 {
@@ -278,11 +293,15 @@ nav a:hover {
 
 @media (max-width: 480px) {
     #hero {
-        height: 50vh;
+        height: 100vh;
+        padding-bottom: 2vh;
     }
 
     #hero h1 {
         font-size: 28px;
+        font-family: "Helvetica Neue";
+        font-weight: 500;
+        line-height: 90%;
     }
 
     #hero h2 {

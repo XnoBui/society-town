@@ -239,6 +239,6 @@ async def generate_twin(character_type: str, gene_stars: int = 3):
 if __name__ == "__main__":
     import uvicorn
     print("Starting AI Twin Generator server...")
-    print("Available at: http://localhost:8081")
-    print("API documentation: http://localhost:8081/docs")
-    uvicorn.run(app, host="127.0.0.1", port=8081) 
+    print("Available at: http://localhost:8000")
+    print("API documentation: http://localhost:8000/docs")
+    uvicorn.run(app, host="127.0.0.1", port=8000) 

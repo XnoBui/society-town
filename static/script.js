@@ -11,10 +11,10 @@ const showGridCheckbox = document.getElementById('showGrid');
 const showBackgroundCheckbox = document.getElementById('showBackground');
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:8081';  // Updated port
+const API_BASE_URL = 'http://localhost:8000';  // Updated port
 
 // WebSocket Configuration
-const WS_URL = 'ws://localhost:8081/ws';
+const WS_URL = 'ws://localhost:8000/ws';
 let ws = null;
 let updateTimeout = null;
 
