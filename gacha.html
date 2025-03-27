@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Gacha - Gene NFTs</title>
+    <link rel="stylesheet" href="css/gacha.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Gacha Landing Screen -->
+    <div id="gacha-landing" class="screen active">
+        <header>
+            <h1>Spin the Gacha</h1>
+            <div class="token-counter">
+                <span class="token-icon">🪙</span>
+                <span id="token-count">50</span>
+            </div>
+        </header>
+
+        <div id="gacha-machine-container">
+            <div id="gacha-machine"></div>
+            <div class="coin-slot-container">
+                <div class="coin-slot"></div>
+                <button class="spin-button" disabled>Spin Now</button>
+                <div class="spin-info">
+                    1 Spin = 50 Tokens
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spin Animation Screen -->
+    <div id="spin-animation" class="screen">
+        <div class="overlay"></div>
+        <div class="animation-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- Gene Reveal Screen -->
+    <div id="gene-reveal" class="screen">
+        <div class="modal">
+            <div class="nft-artwork">
+                <img id="nft-image" src="" alt="Gene NFT">
+            </div>
+            <div class="nft-info">
+                <h2 id="nft-name"></h2>
+                <p id="nft-description"></p>
+                <span id="nft-rarity" class="rarity-tag"></span>
+            </div>
+            <div class="action-buttons">
+                <button class="share-button">Share</button>
+                <div class="secondary-buttons">
+                    <button id="spin-again" class="secondary-button">Spin Again</button>
+                    <button id="view-inventory" class="secondary-button">View Inventory</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Screen -->
+    <div id="inventory" class="screen">
+        <header>
+            <h2>My Gene Collection</h2>
+            <div class="filter-controls">
+                <select id="type-filter">
+                    <option value="">All Types</option>
+                    <option value="humanoid">Humanoid</option>
+                    <option value="cybernetic">Cybernetic</option>
+                </select>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="body">Body</option>
+                    <option value="power">Power</option>
+                    <option value="mark">Mark</option>
+                </select>
+                <button id="view-toggle">Toggle View</button>
+            </div>
+        </header>
+        <div id="nft-grid" class="grid-view">
+            <!-- NFT tiles will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="js/gacha.js"></script>
+</body>
+</html> 
