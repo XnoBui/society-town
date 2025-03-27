@@ -1,9 +1,15 @@
-# Gacha Gene NFT System
+# Society Town
 
-A modern, interactive Gacha system for collecting Gene NFTs with a beautiful 3D interface.
+A modern web platform for the Society Town project, featuring an interactive Gacha system for collecting Gene NFTs.
 
 ## Features
 
+### Main Platform
+- Modern, responsive web design
+- Interactive hero section
+- Dynamic content loading
+
+### Gacha System
 - Interactive 3D gashapon machine using Three.js
 - Realistic coin insertion and spin mechanics
 - Beautiful animations and visual effects
@@ -23,7 +29,7 @@ A modern, interactive Gacha system for collecting Gene NFTs with a beautiful 3D 
 
 1. Clone the repository:
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/xnobui/society-town.git
 ```
 
 2. Start a local server:
@@ -33,28 +39,31 @@ python3 -m http.server 8000
 
 3. Open in your browser:
 ```
-http://localhost:8000/gacha.html
+http://localhost:8000/
 ```
 
-## Usage
-
-1. Insert a coin by clicking the coin slot (costs 50 tokens)
-2. Click the "Spin Now" button once it's enabled
-3. Watch the animation and receive your Gene NFT
-4. View your collection in the inventory
+For the Gacha system, visit:
+```
+http://localhost:8000/gacha.html
+```
 
 ## Project Structure
 
 ```
 .
 ├── css/
-│   └── gacha.css
+│   ├── gacha.css
+│   ├── hero.css
+│   └── styles.css
 ├── js/
-│   └── gacha.js
+│   ├── gacha.js
+│   ├── hero.js
+│   └── main.js
 ├── images/
 │   └── genes/
 ├── sounds/
-│   └── coin.mp3
+├── videos/
+├── index.html
 └── gacha.html
 ```
 
@@ -73,4 +82,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - Three.js community for 3D rendering capabilities
-- Gashapon machine design inspired by modern Japanese vending machines 
+- Gashapon machine design inspired by modern Japanese vending machines
